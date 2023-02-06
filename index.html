@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macro Counter</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./counter.js"></script>
+</head>
+<body>
+  
+  <main>
+
+    <!-- Modal for final meal calculations -->
+    <div class="modal-container">
+      <div class="modal">
+        <button class="modal__btn">&times;</button>
+        <h2 class="modal__title"></h2>
+        <p class="modal__body"></p>
+      </div>
+    </div>
+
+    <!-- ingredient form  -->
+    <div class="form-container">
+      <h1>Macro Counter</h1>
+      <h3>Add ingredient</h3>
+      <form>
+        <label for="ingredient">Ingredient: 
+          <input type="text" id="ingredient" placeholder="Ingredient Name">
+        </label>
+        <label for="serving-size">Serving size:
+          <input type="text" id="serving-size" placeholder="Serving Size">
+        </label>
+        <label for="protein">Protein per serving(grams): 
+          <input type="text" id="protein" placeholder="Protein Per Serving">
+        </label>
+        <label for="carbohydrate">Carbohydrates per serving(grams):
+          <input type="text" id="carbohydrate" placeholder="Carbohydrate Per Serving">
+        </label>
+        <label for="fat">Fats per serving(grams): 
+          <input type="text" id="fat" placeholder="Fat Per Serving">
+        </label>
+        <label for="serving-amount">Amount of servings used?: 
+          <input type="text" id="serving-amount" placeholder="Number of Servings Used">
+        </label>
+        <input type="submit">
+      </form>
+    </div>
+
+    <div class="ingredient-container"></div>
+  </main>
+
+</body>
+</html>

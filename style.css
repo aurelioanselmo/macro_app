@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300;1,400&display=swap');
+
+*, *::after, *::before {
+	 border: 0;
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+}
+ body {
+	 font-family: 'Poppins', sans-serif;
+	 display: grid;
+	 place-items: center;
+	 padding: 2rem;
+	 color: #121614;
+}
+ .modal-container {
+	 position: fixed;
+	 left: 0;
+	 top: 0;
+	 bottom: 0;
+	 right: 0;
+	 background-color: rgba(18, 22, 20, .2);
+	 display: grid;
+	 place-items: center;
+	 opacity: 0;
+	 pointer-events: none;
+	 transition: all 250ms ease-out;
+}
+ .modal-container.active {
+	 opacity: 1;
+	 pointer-events: all;
+}
+ .modal-container .modal {
+	 max-width: 700px;
+	 max-height: 80vh;
+	 overflow: auto;
+	 background-color: white;
+	 border: 3px solid #121614;
+	 padding: 2rem;
+	 position: relative;
+}
+ .modal-container .modal .modal__title {
+	 font-size: 2rem;
+	 line-height: 1.2;
+	 margin-bottom: 1rem;
+	 max-width: 85%;
+}
+ .modal-container .modal .modal__btn {
+	 position: absolute;
+	 top: 0.5rem;
+	 right: 0.5rem;
+	 color: #121614;
+	 font-size: 2rem;
+	 line-height: 2rem;
+	 height: 40px;
+	 width: 40px;
+	 cursor: pointer;
+	 border: 3px solid #121614;
+	 border-radius: 50%;
+	 background-color: white;
+	 box-shadow: 3px 5px 8px 2px rgba(18, 22, 20, .2);
+	 transition: all 250ms ease-out;
+}
+ .modal-container .modal .modal__btn:hover, .modal-container .modal .modal__btn:focus {
+	 outline: none;
+	 border: 3px solid #a4b1aa;
+	 color: #a4b1aa;
+	 box-shadow: none;
+}
+ .form-container {
+	 max-width: 1000px;
+	 margin: 1rem auto;
+}
+ .form-container h1 {
+	 font-size: 3rem;
+	 text-align: center;
+}
+ .form-container h3 {
+	 color: #33ca7f;
+	 text-align: center;
+}
+ .form-container .message {
+	 margin: 1rem 0 1.5rem;
+	 color: white;
+	 padding: 1rem;
+	 text-align: center;
+}
+ .form-container .message.success-message {
+	 background-color: #33ca7f;
+	 box-shadow: 2px 4px 7px 2px rgba(51, 202, 127, .2);
+}
+ .form-container .message.remove-message {
+	 background-color: #446df6;
+	 box-shadow: 2px 4px 7px 2px rgba(68, 109, 246, .2);
+}
+ .form-container .message.alert-message {
+	 background-color: #e01541;
+	 box-shadow: 2px 4px 7px 2px rgba(224, 21, 65, .2);
+}
+ form {
+	 display: grid;
+	 grid-gap: 1rem;
+	 margin: 1rem 0;
+	 width: 100%;
+}
+ form label, form input {
+	 font-family: inherit;
+	 font-size: inherit;
+}
+ form [for="ingredient"], form [for="serving-size"], form [for="protein"], form [for="carbohydrate"], form [for="fat"], form [for="serving-amount"] {
+	 display: flex;
+	 align-items: center;
+	 flex-wrap: wrap;
+	 padding: 1rem;
+	 grid-gap: 1.5rem;
+	 background-color: rgba(164, 177, 170, .2);
+	 font-weight: bold;
+}
+ form [for="ingredient"] input, form [for="serving-size"] input, form [for="protein"] input, form [for="carbohydrate"] input, form [for="fat"] input, form [for="serving-amount"] input {
+	 flex: 1 1 80%;
+	 border: 3px solid #a4b1aa;
+	 padding: 0.5rem;
+	 color: #121614;
+	 width: 100%;
+}
+ form [for="ingredient"] input:focus, form [for="serving-size"] input:focus, form [for="protein"] input:focus, form [for="carbohydrate"] input:focus, form [for="fat"] input:focus, form [for="serving-amount"] input:focus {
+	 outline: 2px solid #121614;
+}
+ form [type="submit"] {
+	 background-color: #33ca7f;
+	 box-shadow: 3px 5px 8px 2px rgba(51, 202, 127, .2);
+	 border: 3px solid transparent;
+	 font-size: 1.3rem;
+	 color: white;
+	 padding: 0.5rem;
+	 cursor: pointer;
+	 transition: all 250ms ease-in-out;
+}
+ form [type="submit"]:hover, form [type="submit"]:focus {
+	 outline: none;
+	 box-shadow: none;
+	 border: 3px solid rgba(18, 22, 20, .5);
+}
+ .ingredient-container {
+	 margin: 2rem auto 1rem;
+	 display: grid;
+	 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	 grid-gap: 1.5rem;
+}
+ .ingredient-container .ingredient {
+	 border: 3px solid rgba(68, 109, 246, .2);
+	 padding: 1.5rem;
+	 transition: all 250ms ease-in-out;
+}
+ .ingredient-container .ingredient__title {
+	 font-size: 2rem;
+	 margin-bottom: 0.5rem;
+}
+ .ingredient-container .ingredient__body {
+	 overflow: hidden;
+	 max-height: 8rem;
+	 -webkit-box-orient: vertical;
+	 display: -webkit-box;
+	 text-overflow: ellipsis;
+	 -webkit-line-clamp: 4;
+}
+ .ingredient-container .ingredient__btns {
+	 display: grid;
+	 grid-template-columns: auto auto;
+	 grid-gap: 0.5rem;
+}
+ .ingredient-container .ingredient__btns .ingredient__btn {
+	 font-family: inherit;
+	 font-size: inherit;
+	 padding: 0.5rem 1rem;
+	 margin-top: 1rem;
+	 color: white;
+	 cursor: pointer;
+	 transition: all 250ms ease-out;
+}
+ .ingredient-container .ingredient__btns .ingredient__btn:focus, .ingredient-container .ingredient__btns .ingredient__btn:hover {
+	 box-shadow: none;
+}
+ .ingredient-container .ingredient__btns .ingredient__view {
+	 background-color: #446df6;
+	 box-shadow: 3px 5px 8px 2px rgba(68, 109, 246, .2);
+}
+ .ingredient-container .ingredient__btns .ingredient__delete {
+	 background-color: #e01541;
+	 box-shadow: 3px 5px 8px 2px rgba(224, 21, 65, .2);
+}
+ 
